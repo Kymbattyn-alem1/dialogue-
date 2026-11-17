@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Виртуальное интервью с Очумеловым</title>
+<style>
+:root{--navy:#19334d;--teal:#249d98;--coral:#ed806d;--gold:#f3bd58;--cream:#fff8ed;--ink:#263847;--muted:#71808a}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:Inter,Arial,sans-serif;color:var(--ink)}
+header{background:linear-gradient(125deg,#19334d,#286d70);color:white;padding:27px 18px}
+.wrap{max-width:1050px;margin:auto}.kicker{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800;color:#bde9e1}
+h1{font-size:clamp(27px,5vw,43px);margin:10px 0 7px}header p{margin:0;color:#e0edef;line-height:1.5;max-width:700px}
+main{max-width:1050px;margin:24px auto;padding:0 16px 40px}
+.notice{background:#fff;border:1px solid #e9e2d7;border-radius:14px;padding:13px 16px;font-size:13px;color:#60717b;line-height:1.5;margin-bottom:17px}
+.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.75fr);gap:17px;align-items:start}
+.chat-card,.side-card{background:white;border:1px solid #e9e2d7;border-radius:18px;box-shadow:0 8px 24px #18324b0a}
+.chat-card{overflow:hidden}
+.chat-head{padding:15px 18px;background:#f2f7f5;display:flex;align-items:center;gap:12px;border-bottom:1px solid #e7ece8}
+.avatar{width:47px;height:47px;border-radius:15px;background:#f8dfbd;display:grid;place-items:center;font-size:28px}
+.chat-head h2{margin:0;font-size:17px;color:var(--navy)}.chat-head small{color:#71818a;font-size:12px}
+.online{margin-left:auto;font-size:11px;color:#27845e;font-weight:800}
+.messages{height:390px;overflow-y:auto;padding:18px;background:linear-gradient(#fff,#fcfbf7);display:flex;flex-direction:column;gap:12px}
+.msg{max-width:86%;padding:11px 13px;border-radius:14px;font-size:13px;line-height:1.55;white-space:pre-wrap}
+.bot{align-self:flex-start;background:#edf5f3;border:1px solid #dcebe6;border-bottom-left-radius:4px}
+.user{align-self:flex-end;background:#19334d;color:white;border-bottom-right-radius:4px}
+.sender{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;opacity:.65;margin-bottom:4px}
+.composer{padding:13px;border-top:1px solid #ece8df;display:flex;gap:8px;background:white}
+input{flex:1;min-width:0;border:1px solid #dce3e1;border-radius:11px;padding:12px;font-size:14px;outline:none}
+input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #249d9820}
+button{font:inherit;cursor:pointer}.send{border:0;border-radius:11px;padding:0 17px;background:var(--teal);color:white;font-weight:800}
+.suggestions{padding:0 14px 14px;display:flex;gap:7px;flex-wrap:wrap}
+.chip{border:1px solid #dce8e4;background:#f5faf8;color:#356a67;border-radius:20px;padding:7px 10px;font-size:11px}
+.side{display:grid;gap:13px}
+.side-card{padding:16px}
+.side-card h3{margin:0 0 8px;font-size:16px;color:var(--navy)}
+.side-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.steps{padding-left:18px;margin:10px 0 0;font-size:12px;line-height:1.75;color:#536975}
+.quote{background:#fff7e6;border-left:3px solid var(--gold);border-radius:8px;padding:11px;margin-top:11px;font-size:12px;line-height:1.5;color:#715a32}
+.compare{margin-top:17px;background:white;border:1px solid #e9e2d7;border-radius:18px;padding:18px}
+.compare h2{margin:0 0 6px;font-size:19px;color:var(--navy)}
+.compare p{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.5}
+textarea{width:100%;min-height:78px;border:1px solid #dce3e1;border-radius:11px;padding:11px;font:13px Arial;resize:vertical}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.action{border:0;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:800;background:var(--navy);color:white}
+.action.light{background:#edf3f1;color:#47616a}
+.saved{font-size:12px;color:#27845e;margin-top:8px;min-height:16px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.messages{height:350px}.side{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.side{grid-template-columns:1fr}.composer{gap:6px}.send{padding:0 12px}}
+</style></head>
+<body>
+<header><div class="wrap"><div class="kicker">Интерактивное задание · Искусственный интеллект</div><h1>🎭 Интервью с Очумеловым</h1><p>Поговори с героем рассказа А. П. Чехова «Хамелеон». Задавай вопросы, изучай его ответы и проверяй их по тексту произведения.</p></div></header>
+<main>
+<div class="notice">💡 <strong>Как работать:</strong> представь, что Очумелов пришёл на интервью. Задай ему вопросы о его поступках, отношении к собаке и перемене мнения. После каждого ответа найди подтверждение или опровержение в рассказе.</div>
+<div class="layout">
+<section class="chat-card">
+ <div class="chat-head"><div class="avatar">👮🏻‍♂️</div><div><h2>Городовой Очумелов</h2><small>Виртуальный собеседник · персонаж рассказа</small></div><div class="online">● ГОТОВ</div></div>
+ <div class="messages" id="messages" aria-live="polite">
+  <div class="msg bot"><div class="sender">Очумелов</div>Здравствуйте! Что вам угодно? Я занят разбирательством на базарной площади. Спрашивайте, только говорите по существу!</div>
+ </div>
+ <div class="composer"><input id="question" maxlength="240" placeholder="Напиши свой вопрос Очумелову…" autocomplete="off"><button class="send" id="send">Отправить ↗</button></div>
+ <div class="suggestions">
+  <button class="chip" data-q="Почему вы постоянно меняли своё мнение?">Почему меняли мнение?</button>
+  <button class="chip" data-q="От чего зависело ваше отношение к собаке?">Отношение к собаке</button>
+  <button class="chip" data-q="Боялись ли вы генерала?">Боялись генерала?</button>
+  <button class="chip" data-q="Что означает ваша шинель в рассказе?">Зачем шинель?</button>
+ </div>
+</section>
+<aside class="side">
+ <div class="side-card"><h3>🔎 Миссия исследователя</h3><p>Не принимай слова персонажа за единственную истину. Сравнивай его ответы с поступками и репликами в рассказе.</p><ol class="steps"><li>Задай вопрос герою.</li><li>Прочитай его ответ.</li><li>Найди эпизод в произведении.</li><li>Сделай собственный вывод.</li></ol></div>
+ <div class="side-card"><h3>📖 На что обратить внимание</h3><p>В ходе интервью исследуй сатиру, речевую характеристику, художественную деталь и образ хамелеона.</p><div class="quote">Главный вопрос: действительно ли Очумелов защищает порядок или старается угодить человеку, которого считает влиятельным?</div></div>
+</aside>
+</div>
+<section class="compare">
+<h2>📝 Сопоставь ответ с текстом</h2>
+<p>Запиши, что в ответе Очумелова подтверждается произведением. Приведи эпизод или цитату и сформулируй свой вывод.</p>
+<textarea id="reflection" placeholder="Например: Очумелов меняет тон после сообщения о возможном хозяине собаки. Это показывает его угодливость…"></textarea>
+<div class="actions"><button class="action" id="save">Сохранить мой вывод</button><button class="action light" id="clear">Очистить переписку</button></div>
+<div class="saved" id="saved"></div>
+</section>
+</main>
+<script>
+const messages=document.getElementById('messages'),input=document.getElementById('question');
+function reply(q){
+ const s=q.toLowerCase();
+ if(/почему|менял|мнение|передум|хамелеон/.test(s)) return 'Я? Менял мнение? Никак нет! Я просто уточнял обстоятельства. Сначала мне сказали одно, потом другое… Разве представитель власти не должен учитывать новые сведения? Хотя, конечно, если собака принадлежит генералу, дело совсем другое!\\n\\n🔍 Проверь по тексту: как меняются оценки собаки и тон Очумелова после сообщений о её возможном хозяине?';
+ if(/собак|отношен|кус|щен/.test(s)) return 'Собака должна быть либо наказана, либо… защищена! Всё зависит от того, чья она. Если обычная — одно дело, а если из генеральского дома — совсем другое. Я ведь обязан разобраться!\\n\\n🔍 Найди эпизоды, в которых окружающие предполагают разных хозяев собаки. Сравни реакции героя.';
+ if(/генерал|боя|страш|влият|чин/.test(s)) return 'Я вовсе никого не боюсь! Просто нужно уважать людей высокого положения. Порядок есть порядок… И всё-таки не стоит делать поспешных выводов о собаке генерала.\\n\\n🔍 Обрати внимание, как предположение о принадлежности собаки влияет на поведение городового. Что это говорит о чинопочитании?';
+ if(/шинел|одежд|детал/.test(s)) return 'Шинель? Самая обыкновенная шинель! То сниму её, то надену — погода, знаете ли, переменчивая. А может, дело вовсе не в погоде…\\n\\n🔍 Вспомни моменты, когда Очумелов снимает или надевает шинель. Как эта деталь помогает раскрыть его состояние?';
+ if(/характер|какой вы|кто вы|качест/.test(s)) return 'Я человек служебный, требовательный и справедливый! Хотя иногда приходится проявлять гибкость. Обстановка меняется — и решение должно быть соответствующим.\\n\\n🔍 Сопоставь слова героя с его поступками. Какие качества высмеивает Чехов?';
+ if(/смысл|автор|чехов|сати|высме/.test(s)) return 'Не знаю, что там хотел показать автор! Я всего лишь выполнял свою службу. Но почему вы так внимательно изучаете мои слова?\\n\\n🔍 Подумай, какие общественные недостатки раскрываются через комическое поведение Очумелова.';
+ return 'Хм… Вопрос непростой. Я бы сказал, что поступал по обстоятельствам и старался соблюдать порядок. Но вы лучше перечитайте сцену на базарной площади и обратите внимание, как меняется моя речь после каждой новой новости о хозяине собаки.\\n\\n🔍 Попробуй задать более точный вопрос о моём поведении, собаке, генерале или шинели.';
+}
+function add(text,who){
+ const div=document.createElement('div');div.className='msg '+who;
+ const sender=document.createElement('div');sender.className='sender';sender.textContent=who==='user'?'Ты':'Очумелов';
+ const body=document.createElement('div');body.textContent=text;
+ div.append(sender,body);messages.appendChild(div);messages.scrollTop=messages.scrollHeight;
+}
+function send(){
+ const q=input.value.trim();if(!q)return;
+ add(q,'user');input.value='';
+ setTimeout(()=>add(reply(q),'bot'),250);
+}
+document.getElementById('send').addEventListener('click',send);
+input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>{input.value=b.dataset.q;send()}));
+document.getElementById('save').addEventListener('click',()=>{const v=document.getElementById('reflection').value.trim();document.getElementById('saved').textContent=v?'Вывод записан на этой странице. Не забудь сохранить или скопировать его!':'Сначала напиши свой вывод.'});
+document.getElementById('clear').addEventListener('click',()=>{messages.innerHTML='<div class="msg bot"><div class="sender">Очумелов</div>Здравствуйте! Что вам угодно? Я занят разбирательством на базарной площади. Спрашивайте, только говорите по существу!</div>';});
+</script>
+</body></html>
